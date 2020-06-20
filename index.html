@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> <!--slick.js-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/image.png" type="image/png">
     <meta name="viewport" content="width=device-width" initial-scale="1"> <!--принять ширину экрана устройства initial - zoom-->
     <title>Forest tour</title>
 
@@ -43,14 +44,14 @@
             <div class="header_logo">
                 <img src="assets/images/logo.png" alt="">
             </div>
-            <nav class="nav">
+            <nav class="nav" id="nav">
                 <a class="nav_link" href='#' data-scroll="#features">Features</a>
                 <a class="nav_link" href='#' data-scroll="#works">Photos</a>
                 <a class="nav_link" href='#' data-scroll="#team">Our_team</a>
                 <a class="nav_link" href='#' data-scroll="#reviews">Testimonials</a>
                 <a class="nav_link" href='#' data-scroll="#download">Let's go</a>
             </nav>
-            <button class="burger" type="button">
+            <button class="burger" type="button" id="navToggle">
                 <span class="burger_item">Menu</span>
             </button>
 
@@ -176,7 +177,6 @@
     <div class="works_item"><!--works_item8-->
         <img class="works_photo" src="assets/images/works/8.jpg" alt="">
         <div class="works_content">
-            <div class="works_title">Fun</div>
             <div class="works_title">Fun</div>
             <div class="works_text">Altai</div>
         </div>
@@ -306,9 +306,8 @@
 
 <div class="reviews" id="reviews">
     <div class="container">
-
-
-        <div class="reviews_item">
+        <div id="reviewsSlider">
+        <div class="reviews_item"> <!--1й отзыв-->
             <div class="reviews_photo">
                 <img class="reviews_img" src="assets/images/reviews/reviews1.jpg" alt="">
             </div>
@@ -316,8 +315,16 @@
                 <div class="reviews_text">“Investing in travel is investing in yourself”.</div>
                 <div class="reviews_author">Michael Morhaime.</div>
             </div>
+            <div class="reviews_item"><!--2й отзыв-->
+                <div class="reviews_photo">
+                    <img class="reviews_img" src="assets/images/reviews/reviews1.jpg" alt="">
+                </div>
+                <div class="reviews_content">
+                    <div class="reviews_text">“Investing in travel is investing in yourself”.</div>
+                    <div class="reviews_author">Michael Morhaime.</div>
+                </div>
         </div>
-
+        </div> <!--slider-->
 
     </div> <!--/.container-->
 </div> <!--/.reviews-->
@@ -396,6 +403,7 @@
 
 
 <!--JavaScript-->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><!--поключаем библиотеку slick.js-->
 <script src="app.js"></script> <!--подключаем наш файл js-->
 </body>
 </html>

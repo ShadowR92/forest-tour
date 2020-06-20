@@ -2,30 +2,61 @@ $(function () {
     /*Fixed header*/
     let header = $("#header"); /*задаем переменную header выбираем её по id=header*/
     let intro = $("#intro");
-    let introH; /*объявили переменную*/
+    let introH = intro.innerHeight(); /*объявили переменную высота нашей стр*/
     let scrollPos = $(window).scrollTop(); /*переменная со значением нашего скрола(обращаемся к окну и сколько от верха проскролили*/
+    let nav = $("#nav");
+    let navToggle = $("#navToggle");
 
-    $(window).on("scroll load resize", function() { /*обращаемся к окну, при скроле/загрузке/мобильнойверсии страницы происходит функция*/
+
+    checkScroll(scrollPos, introH);
+
+    $(window).on("scroll resize", function() { /*обращаемся к окну, при скроле/загрузке/мобильнойверсии страницы происходит функция*/
         let introH = intro.innerHeight(); /*перезаписываем значение переменной*/
         scrollPos = $(this).scrollTop(); /*обновляем значение скрола при скроле на текущую*/
+        checkScroll(scrollPos, introH)
+    });
 
+    function checkScroll(scrollPos, introH) {
         if (scrollPos > introH) { /*если позиция скрола больше чем высота нашего интро блока, то*/
             header.addClass("fixed"); /*добавляем класс fixed*/
         } else /*иначе*/{
             header.removeClass("fixed"); /*удаляем класс*/
         }
-    });
-
-
+    }
 
     /*Smooth Scroll* плавный скрол*/
-    $("[data-scroll]").on("click", function(event){
-        event.preventDefault();
+    $("[data-scroll]").on("click", function(event){ /*нажимаем на ссылку с атрибутом data-scroll*/
+        event.preventDefault(); /*отменяет стандартное поведение ссылки(перезагрузки стр)*/
 
-        let elementId = $(this).data('scroll');
-        let elementOffset = $(elementId).offset().top;
+        let elementId = $(this).data('scroll'); /*в переменную elementId записывается id на что мы кликаем*/
+        let elementOffset = $(elementId).offset().top; /*получить позицию элеента от верха страицы*/
 
-        console.log(elementId);
+        nav.removeClass("show");
+
+        console.log(elementOffset);
+        $("html,body").animate({
+            scrollTop: elementOffset -100 /*проскролим плавно стр до этого значения, а -100 это отступ сверху*/
+        }, 700/*скорость 700 мили секунд*/);
 
     });
+
+
+    /*Nav Toggle*/
+
+    navToggle.on("click", function(event) { /*Выбираем селектор navToggle следим за его кликом, при клике функция*/
+        event.preventDefault();
+        nav.toggleClass("show");
+    });
+
+
+
+
+
+
+
+
+
+
+
 });
+

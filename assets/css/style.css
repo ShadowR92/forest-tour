@@ -51,7 +51,10 @@ p{
     border-bottom: 0;
 }
 .header_logo>img {
-    width: 100px;
+    width: 60px;
+    margin-bottom: -25px;
+    margin-top: -30px;
+
 }
 
 .header_inner{
@@ -68,6 +71,7 @@ p{
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
+
 }
 .nav_link {
     margin-left: 50px;
@@ -475,6 +479,19 @@ p{
     /*Nav*/
     .nav {
         display: none;
+        position: absolute;
+        width: 100%;
+        text-align: right;
+        flex-direction: column;
+        top: 100%;
+        right: 0;
+        background-color: #31344e;
+    }
+    .nav.show {
+        display: flex;
+    }
+    .nav_link {
+        padding: 9px 15px;
     }
     /*Burger*/
     .burger {
