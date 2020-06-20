@@ -23,7 +23,7 @@ $(function () {
         event.preventDefault();
 
         let elementId = $(this).data('scroll');
-        let elementOffset = $(elementId),offset().top;
+        let elementOffset = $(elementId).offset().top;
 
         console.log(elementId);
 
