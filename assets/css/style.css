@@ -342,13 +342,14 @@ p{
     width: 50%;
     height: 500px;
     position: relative;
+    overflow:hidden
 }
 .reviews_img {
     position: absolute;
-    top: 50%;
-    right: 0;
+    left: calc(50% - 550px);
+
     z-index: 1;
-    transform: translateY(-50%);
+
 
 }
 .reviews_content {
