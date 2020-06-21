@@ -347,9 +347,7 @@ p{
 .reviews_img {
     position: absolute;
     left: calc(50% - 550px);
-
     z-index: 1;
-
 
 }
 .reviews_content {
