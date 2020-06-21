@@ -48,7 +48,17 @@ $(function () {
         nav.toggleClass("show");
     });
 
+    /*Reviews: https://kenwheeler.github.io/slick/*/
+    let slider = $("#reviewsSlider");
 
+    slider.slick({   /*указываем слайдер метод слик*/
+        infinite: true, /*бесконечно скролится*/
+        slidesToShow: 1, /*сколько показываем слайдеров*/
+        slidesToScroll: 1, /*сколько скролим при клике*/
+        fade: true, /*один исчезает другой появляется*/
+        arrows: false, /*убираем кнопки ревьюс и некст*/
+        dots: true /*точки перехода*/
+    });
 
 
 
